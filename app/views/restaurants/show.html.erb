@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.category %></p>
+<hr>
+<h2>Reviews:</h2>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %></li>
+  <% end %>
+</ul>
+<hr>
+<%= link_to "Leave a review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Back to restaurants", restaurants_path %>
